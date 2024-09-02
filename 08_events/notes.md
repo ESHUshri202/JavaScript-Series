@@ -1,4 +1,4 @@
-...javascript
+```javascript
 //type
 function getEventType(event) {
   const log = document.getElementById("log");
@@ -106,4 +106,4 @@ reset.addEventListener("click", () => document.location.reload());
 
 >
 
-...
+```
