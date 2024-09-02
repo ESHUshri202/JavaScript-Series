@@ -6,6 +6,22 @@
     <title>Async Code</title>
 </head>
 <body>
-    
+    <h1>Async Code</h1>
+    <button id="stop">Stop</button>
 </body>
+<script>
+    const sayAchintya = function(){
+        console.log("Achintya");
+    }
+    setTimeout(sayAchintya,2000)
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Best Async Series"
+    }
+    const changeme = setTimeout(changeText,2000)
+    let button = document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(changeme)
+        console.log("Stopped")
+    })
+
+</script>
 </html>
