@@ -22,7 +22,7 @@
     }
 
 </style>
-<body style="background-color: #212121;color: aliceblue;">
+<body style="">
     <!-- <h1>    Value	State	Description
     0	UNSENT	Client has been created. open() not called yet.
     1	OPENED	open() has been called.
@@ -33,7 +33,8 @@
     <h1 class="title">
         Click Me To get <span class="info"> Information</span> 
     </h1>
-    <span class="box">hello</span>
+    <span class="box"></span>
+    <h3 class="followers"></h3>
     <button class="open">Open</button>
     <button class="close">Close</button>
 </body>
@@ -42,9 +43,19 @@
     buttonStart.addEventListener('click',()=>{
         const requestURL = 'https://api.github.com/users/ESHUshri202'
         const xhr = new XMLHttpRequest()
-        xhr.
         xhr.open('GET', requestURL)
-
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState)
+            if(xhr.readyState === 4 ){
+                const data = JSON.parse(this.responseText)
+                console.log(data)
+                console.log("Followers on: ",data.followers)
+                const span = document.querySelector('.box')
+                span.innerHTML = `<img src= ${data.avatar_url} ></img>`    
+                const text = document.querySelector('.followers')
+                text.innerHTML = `<span style="color: #0000;">${data.followers}</span>`
+            }
+        }
         xhr.send()
     })
 </script>
