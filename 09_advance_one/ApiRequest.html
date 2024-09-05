@@ -5,19 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    *{
+        padding: 0; 
+        margin: 0 ;
+    }
+    .title{
+        position: relative;
+        display: flex;
+        justify-content: center ;
+        align-items: center ;
+    }
+    .info{
+        text-shadow: #fff;
+        color:cornflowerblue;
+    }
+
+</style>
 <body style="background-color: #212121;color: aliceblue;">
-    <h1>    Value	State	Description
+    <!-- <h1>    Value	State	Description
     0	UNSENT	Client has been created. open() not called yet.
     1	OPENED	open() has been called.
     2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
     3	LOADING	Downloading; responseText holds partial data.
-    4	DONE	The operation is complete.</h1>
+    4	DONE	The operation is complete.</h1> -->
+
+    <h1 class="title">
+        Click Me To get <span class="info"> Information</span> 
+    </h1>
+    <span class="box">hello</span>
+    <button class="open">Open</button>
+    <button class="close">Close</button>
 </body>
 <script>
-    const requestURL = 'https://api.github.com/users/ESHUshri202'
-    const xhr = new XMLHttpRequest()
-    xhr.open('GET', requestURL)
+    const buttonStart = document.querySelector('.open')
+    buttonStart.addEventListener('click',()=>{
+        const requestURL = 'https://api.github.com/users/ESHUshri202'
+        const xhr = new XMLHttpRequest()
+        xhr.
+        xhr.open('GET', requestURL)
 
-    xhr.send()
+        xhr.send()
+    })
 </script>
 </html>

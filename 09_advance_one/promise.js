@@ -91,7 +91,7 @@ async function getAll(){
         console.log(data);
     
     } catch (error) {
-        console.log(eror)    
+        console.log(error)    
     }
     
 }
